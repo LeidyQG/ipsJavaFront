@@ -42,7 +42,7 @@ class MedicoAPI{
         let medicos= await fetch("http://localhost:3000/medicos");
         medicos= await medicos.json();
     
-        const miTabla=document.getElementById("tabla");
+        const miTabla=document.getElementById("tabla_medicos");
     
         medicos.forEach(
             (medico)=>{

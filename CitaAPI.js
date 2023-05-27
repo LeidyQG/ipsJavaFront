@@ -38,7 +38,7 @@ class CitaAPI{
         let citas= await fetch("http://localhost:3000/citas");
         citas= await citas.json();
     
-        const miTabla=document.getElementById("tabla");
+        const miTabla=document.getElementById("tabla_citas");
     
         citas.forEach(
             (cita)=>{

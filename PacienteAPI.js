@@ -38,7 +38,7 @@ class PacienteAPI{
         let pacientes= await fetch("http://localhost:3000/pacientes");
         pacientes= await pacientes.json();
     
-        const miTabla=document.getElementById("tabla");
+        const miTabla=document.getElementById("tabla_pacientes");
     
         pacientes.forEach(
             (paciente)=>{
