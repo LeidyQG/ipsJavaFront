@@ -1,25 +1,22 @@
 class PacienteAPI{
     async guardarPaciente(){
         const cedula=document.getElementById("cedula").value;
-        const nombre =document.getElementById("nombre ").value;
+        const nombre =document.getElementById("nombre").value;
         const apellido=parseInt(document.getElementById("apellido").value);
-        const fechaNacimiento=document.getElementById("fechaNacimiento").value;
-        const telefono =document.getElementById("telefono ").value;
-        const Cita =document.getElementById("Cita").value;
-
+        const edad=document.getElementById("edad").value;
+        const telefono =document.getElementById("telefono").value;
 
         
         const datos={
             cedula:cedula,
             nombre:nombre,
             apellido:apellido,
-            fechaNacimiento:fechaNacimiento,
-            telefono:telefono,
-            Cita:Cita
+            edad:edad,
+            telefono:telefono
         };
 
         await fetch(
-            "http://localhost:3000/crear_paciente",
+            'http://localhost:3000/crear_paciente',
             {
                 method:"POST",
                 body:JSON.stringify(datos),
@@ -35,7 +32,7 @@ class PacienteAPI{
 
     async listarPacientes(){
 
-        let pacientes= await fetch("http://localhost:3000/pacientes");
+        let pacientes= await fetch('http://localhost:3000/pacientes');
         pacientes= await pacientes.json();
     
         const miTabla=document.getElementById("tabla_pacientes");
@@ -46,7 +43,7 @@ class PacienteAPI{
                 fila.insertCell().innerText=paciente.cedula;
                 fila.insertCell().innerText=paciente.nombre;
                 fila.insertCell().innerText=paciente.apellido;
-                fila.insertCell().innerText=paciente.fechaNacimiento;
+                fila.insertCell().innerText=paciente.edad;
                 fila.insertCell().innerText=paciente.telefono;
             }
         );

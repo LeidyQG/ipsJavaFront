@@ -19,7 +19,7 @@ class CitaAPI{
         };
 
         await fetch(
-            "http://localhost:3000/crear_cita",
+            'http://localhost:3000/crear_cita',
             {
                 method:"POST",
                 body:JSON.stringify(datos),
@@ -35,7 +35,7 @@ class CitaAPI{
 
     async listarCitas(){
 
-        let citas= await fetch("http://localhost:3000/citas");
+        let citas= await fetch('http://localhost:3000/citas');
         citas= await citas.json();
     
         const miTabla=document.getElementById("tabla_citas");

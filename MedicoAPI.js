@@ -1,13 +1,11 @@
 class MedicoAPI{
     async guardarMedico(){
         const tarjetaProfesional=document.getElementById("tarjetaProfesional").value;
-        const nombre =document.getElementById("nombre ").value;
-        const apellido=parseInt(document.getElementById("apellido").value);
-        const consultorio=document.getElementById("consultorio").value;
+        const nombre =document.getElementById("nombre").value;
+        const apellido=document.getElementById("apellido").value;
+        const consultorio=parseInt(document.getElementById("consultorio").value);
         const correo  =document.getElementById("correo").value;
-        const Cita  =document.getElementById("Cita").value;
         const Especialidad  =document.getElementById("Especialidad").value;
-        const idEspecialidad  =parseInt(document.getElementById("idEspecialidad").value);
 
 
         
@@ -17,13 +15,11 @@ class MedicoAPI{
             apellido:apellido,
             consultorio:consultorio,
             correo:correo,
-            Cita:Cita,
-            Especialidad:Especialidad,
-            idEspecialidad:idEspecialidad
+            Especialidad:Especialidad
         };
 
         await fetch(
-            "http://localhost:3000/crear_medico",
+            'http://localhost:3000/crear_medico',
             {
                 method:"POST",
                 body:JSON.stringify(datos),
@@ -39,7 +35,7 @@ class MedicoAPI{
 
     async listarMedicos(){
 
-        let medicos= await fetch("http://localhost:3000/medicos");
+        let medicos= await fetch('http://localhost:3000/medicos');
         medicos= await medicos.json();
     
         const miTabla=document.getElementById("tabla_medicos");
@@ -52,9 +48,7 @@ class MedicoAPI{
                 fila.insertCell().innerText=medico.apellido;
                 fila.insertCell().innerText=medico.consultorio;
                 fila.insertCell().innerText=medico.correo;
-                fila.insertCell().innerText=medico.Cita;
                 fila.insertCell().innerText=medico.Especialidad;
-                fila.insertCell().innerText=medico.idEspecialidad;
             }
         );
     }
