@@ -1,6 +1,6 @@
 class MedicoAPI{
     async guardarMedico(){
-        const tarjetaProfesional=document.getElementById("tarjetaProfesional").value;
+        const tarjetaProfesional=parseInt(document.getElementById("tarjetaProfesional").value);
         const nombre =document.getElementById("nombre").value;
         const apellido=document.getElementById("apellido").value;
         const consultorio=parseInt(document.getElementById("consultorio").value);
