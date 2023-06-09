@@ -7,6 +7,6 @@ miBoton.addEventListener('click',
 async (event)=>{
     event.preventDefault();
     miBoton.disabled=true;
-    await miCita.guardarCita();
+    await miCita.crearCita();
 }
 );

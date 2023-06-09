@@ -1,11 +1,11 @@
 class MedicoAPI{
-    async guardarMedico(){
+    async crearMedico(){
         const tarjetaProfesional=parseInt(document.getElementById("tarjetaProfesional").value);
         const nombre =document.getElementById("nombre").value;
         const apellido=document.getElementById("apellido").value;
-        const consultorio=parseInt(document.getElementById("consultorio").value);
+        const consultorio=document.getElementById("consultorio").value;
         const correo  =document.getElementById("correo").value;
-        const Especialidad  =document.getElementById("Especialidad").value;
+        const idEspecialidad  =parseInt(document.getElementById("idEspecialidad").value);
 
 
         
@@ -15,7 +15,7 @@ class MedicoAPI{
             apellido:apellido,
             consultorio:consultorio,
             correo:correo,
-            Especialidad:Especialidad
+            idEspecialidad:idEspecialidad
         };
 
         await fetch(

@@ -2,7 +2,7 @@ class PacienteAPI{
     async guardarPaciente(){
         const cedula=parseInt(document.getElementById("cedula").value);
         const nombre =document.getElementById("nombre").value;
-        const apellido=parseInt(document.getElementById("apellido").value);
+        const apellido=document.getElementById("apellido").value;
         const edad=parseInt(document.getElementById("edad").value);
         const telefono =document.getElementById("telefono").value;
 

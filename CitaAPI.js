@@ -1,10 +1,8 @@
 class CitaAPI{
-    async guardarCita(){
+    async crearCita(){
         const idCita=parseInt(document.getElementById("idCita").value);
-        const fecha =document.getElementById("fecha").value;
-        const Paciente=document.getElementById("Paciente").value;
+        const fecha =Date.parse(document.getElementById("fecha").value);
         const pacienteCedula=parseInt(document.getElementById("pacienteCedula").value);
-        const Medico=document.getElementById("Medico").value;
         const medicoTarjetaProfesional=parseInt(document.getElementById("medicoTarjetaProfesional").value);
 
 
@@ -12,9 +10,7 @@ class CitaAPI{
         const datos={
             idCita:idCita,
             fecha:fecha,
-            Paciente:Paciente,
             pacienteCedula:pacienteCedula,
-            Medico:Medico,
             medicoTarjetaProfesional:medicoTarjetaProfesional
         };
 
@@ -45,9 +41,7 @@ class CitaAPI{
                 const fila= miTabla.insertRow();
                 fila.insertCell().innerText=cita.idCita;
                 fila.insertCell().innerText=cita.fecha;
-                fila.insertCell().innerText=cita.Paciente;
                 fila.insertCell().innerText=cita.pacienteCedula;
-                fila.insertCell().innerText=cita.Medico;
                 fila.insertCell().innerText=cita.medicoTarjetaProfesional;
             }
         );
