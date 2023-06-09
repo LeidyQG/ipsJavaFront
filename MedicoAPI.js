@@ -48,7 +48,7 @@ class MedicoAPI{
                 fila.insertCell().innerText=medico.apellido;
                 fila.insertCell().innerText=medico.consultorio;
                 fila.insertCell().innerText=medico.correo;
-                fila.insertCell().innerText=medico.Especialidad;
+                fila.insertCell().innerText=medico.idEspecialidad;
             }
         );
     }
