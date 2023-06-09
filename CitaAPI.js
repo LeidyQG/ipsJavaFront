@@ -2,7 +2,9 @@ class CitaAPI{
     async crearCita(){
         const idCita=parseInt(document.getElementById("idCita").value);
         const fecha =Date.parse(document.getElementById("fecha").value);
+        const Paciente=document.getElementById("Paciente").value;
         const pacienteCedula=parseInt(document.getElementById("pacienteCedula").value);
+        const Medico=document.getElementById("Medico").value;
         const medicoTarjetaProfesional=parseInt(document.getElementById("medicoTarjetaProfesional").value);
 
 
@@ -10,8 +12,10 @@ class CitaAPI{
         const datos={
             idCita:idCita,
             fecha:fecha,
+            Paciente:Paciente,
             pacienteCedula:pacienteCedula,
-            medicoTarjetaProfesional:medicoTarjetaProfesional
+            Medico:Medico, 
+            medicoTarjetaProfesional:medicoTarjetaProfesional,
         };
 
         await fetch(
