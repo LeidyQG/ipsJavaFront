@@ -1,6 +1,6 @@
 class CitaAPI{
     async crearCita(){
-        const idCita=parseInt(document.getElementById("idCita").value);
+        const id_cita=parseInt(document.getElementById("id_cita").value);
         const fecha =Date.parse(document.getElementById("fecha").value);
         const pacienteCedula=parseInt(document.getElementById("pacienteCedula").value);
         const medicoTarjetaProfesional=parseInt(document.getElementById("medicoTarjetaProfesional").value);
@@ -8,14 +8,14 @@ class CitaAPI{
 
         
         const datos={
-            idCita:idCita,
+            id_cita:id_cita,
             fecha:fecha,
             pacienteCedula:pacienteCedula,
             medicoTarjetaProfesional:medicoTarjetaProfesional
         };
 
         await fetch(
-            'http://localhost:3000/crear_cita',
+            'http://localhost:8080/citas/crear_cita',
             {
                 method:"POST",
                 body:JSON.stringify(datos),
@@ -31,7 +31,7 @@ class CitaAPI{
 
     async listarCitas(){
 
-        let citas= await fetch('http://localhost:3000/citas');
+        let citas= await fetch('http://localhost:8080/citas');
         citas= await citas.json();
     
         const miTabla=document.getElementById("tabla_citas");
@@ -39,7 +39,7 @@ class CitaAPI{
         citas.forEach(
             (cita)=>{
                 const fila= miTabla.insertRow();
-                fila.insertCell().innerText=cita.idCita;
+                fila.insertCell().innerText=cita.id_cita;
                 fila.insertCell().innerText=cita.fecha;
                 fila.insertCell().innerText=cita.pacienteCedula;
                 fila.insertCell().innerText=cita.medicoTarjetaProfesional;
